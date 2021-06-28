@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-28T14:33:29.216Z</updated>
+  <updated>2021-06-28T14:47:49.274Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,27 +18,25 @@
   
   <entry>
     <title>AWS SAP Certification</title>
-    <link href="http://example.com/2021/06/28/AWS%20SAP%20Certification/"/>
-    <id>http://example.com/2021/06/28/AWS%20SAP%20Certification/</id>
-    <published>2021-06-28T14:10:41.000Z</published>
-    <updated>2021-06-28T14:33:29.216Z</updated>
+    <link href="http://example.com/2021/06/28/AWS-SAP-Certification/"/>
+    <id>http://example.com/2021/06/28/AWS-SAP-Certification/</id>
+    <published>2021-06-28T14:46:00.000Z</published>
+    <updated>2021-06-28T14:47:49.274Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2021/06/28/AWS%20SAP%20Certification/Users\Administrator\Jarvan\source\_posts\AWS SAP Certification\aws-sap-cetification.png" alt="aws-sap-cetification"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2021/06/28/AWS-SAP-Certification/Users\Administrator\Jarvan\source\_posts\AWS-SAP-Certification\aws-sap-cetification.png" alt="aws-sap-cetification"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2021/06/28/AWS%20SAP%20Certification/Users\Administrator\Jarvan\source\_posts\AWS SAP Certification\aws-sap-cetification.png&quot; </summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2021/06/28/AWS-SAP-Certification/Users\Administrator\Jarvan\source\_posts\AWS-SAP-Certification\aws-sap-cetification.png&quot; alt=</summary>
       
     
     
-    
-    <category term="certification" scheme="http://example.com/categories/certification/"/>
     
     
     <category term="aws" scheme="http://example.com/tags/aws/"/>
     
-    <category term="certification" scheme="http://example.com/tags/certification/"/>
+    <category term="cetification" scheme="http://example.com/tags/cetification/"/>
     
   </entry>
   

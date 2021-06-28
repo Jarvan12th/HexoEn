@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-28T15:05:13.352Z</updated>
+  <updated>2021-06-28T15:08:13.087Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://example.com/2021/06/28/AWS-SAP-Certification/"/>
     <id>http://example.com/2021/06/28/AWS-SAP-Certification/</id>
     <published>2021-06-28T14:46:00.000Z</published>
-    <updated>2021-06-28T15:05:13.352Z</updated>
+    <updated>2021-06-28T15:08:13.087Z</updated>
     
-    <content type="html"><![CDATA[<p>2021.06.24</p>]]></content>
+    <content type="html"><![CDATA[<p>2021.06.24</p><img src="/2021/06/28/AWS-SAP-Certification/aws-sap-certification.png" class title="This is aws sap certification">]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;2021.06.24&lt;/p&gt;
-</summary>
+&lt;img src=&quot;/2021/06/28/AWS-SAP-Certification/aws-sap-certification.png&quot; class title=&quot;This is aws sap certification&quot;&gt;</summary>
       
     
     

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-28T14:29:27.574Z</updated>
+  <updated>2021-06-28T14:33:29.216Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2021/06/28/AWS%20SAP%20Certification/"/>
     <id>http://example.com/2021/06/28/AWS%20SAP%20Certification/</id>
     <published>2021-06-28T14:10:41.000Z</published>
-    <updated>2021-06-28T14:29:27.574Z</updated>
+    <updated>2021-06-28T14:33:29.216Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="C:\Users\Administrator\Jarvan\source\images\AWS SAP Certification\aws-sap-cetification.png" alt="aws-sap-cetification"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="C:\Users\Administrator\Jarvan\source\_posts\AWS SAP Certification\aws-sap-cetification.png" alt="aws-sap-cetification"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;C:\Users\Administrator\Jarvan\source\images\AWS SAP Certification\aws-sap-cetification.png&quot; alt=&quot;aws-sap-cetification&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;C:\Users\Administrator\Jarvan\source\_posts\AWS SAP Certification\aws-sap-cetification.png&quot; alt=&quot;aws-sap-cetification&quot;&gt;&lt;/p&gt;
 </summary>
       
     
@@ -68,7 +68,7 @@
     <link href="http://example.com/2021/06/12/Template/"/>
     <id>http://example.com/2021/06/12/Template/</id>
     <published>2021-06-12T03:20:03.000Z</published>
-    <updated>2021-06-12T04:10:35.415Z</updated>
+    <updated>2021-06-28T14:31:06.292Z</updated>
     
     <content type="html"><![CDATA[<p>Save this as a template</p>]]></content>
     
@@ -82,7 +82,7 @@
     
     
     
-    <category term="AWS" scheme="http://example.com/tags/AWS/"/>
+    <category term="aws" scheme="http://example.com/tags/aws/"/>
     
   </entry>
   

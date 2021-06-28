@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Template</title>
-    <url>/2021/06/12/Template/</url>
-    <content><![CDATA[<p>Save this as a template</p>
+    <title>AWS SAP Certification</title>
+    <url>/2021/06/28/AWS%20SAP%20Certification/</url>
+    <content><![CDATA[<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210628221350803.png" alt="image-20210628221350803"></p>
 ]]></content>
       <tags>
-        <tag>AWS</tag>
+        <tag>aws, certification</tag>
       </tags>
   </entry>
   <entry>
@@ -22,5 +22,14 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Template</title>
+    <url>/2021/06/12/Template/</url>
+    <content><![CDATA[<p>Save this as a template</p>
+]]></content>
+      <tags>
+        <tag>AWS</tag>
+      </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-28T15:08:13.087Z</updated>
+  <updated>2021-11-27T01:49:07.924Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PTE-Score</title>
+    <link href="http://example.com/2021/11/27/PTE-Score/"/>
+    <id>http://example.com/2021/11/27/PTE-Score/</id>
+    <published>2021-11-27T01:45:19.000Z</published>
+    <updated>2021-11-27T01:49:07.924Z</updated>
+    
+    <content type="html"><![CDATA[<p>2021.09.18</p><img src="/2021/11/27/PTE-Score/pte-score.png" class title="This is the newest pte score">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2021.09.18&lt;/p&gt;
+&lt;img src=&quot;/2021/11/27/PTE-Score/pte-score.png&quot; class title=&quot;This is the newest pte score&quot;&gt;
+</summary>
+      
+    
+    
+    
+    <category term="certification" scheme="http://example.com/categories/certification/"/>
+    
+    
+    <category term="certification" scheme="http://example.com/tags/certification/"/>
+    
+    <category term="pte" scheme="http://example.com/tags/pte/"/>
+    
+  </entry>
   
   <entry>
     <title>AWS SAP Certification</title>

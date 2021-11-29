@@ -20,20 +20,26 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="All About Jarvan">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="我买了阿里云的轻量服务器，双十一的折扣不要太划算，43块钱租赁一整年。服务器系统设置成CentOS8，用来验证Spring Boot应用的部署环节。 部署的流程很简单：本地成功运行SpringBoot应用 -&gt; 打成jar包 -&gt; 配置CentOS环境 -&gt; 部署jar包到服务器，可实际上，过程中走了很多弯路，却也有趣。从下午6点一直到1点半，我十分投入，甚至晚饭也忘了。本来打算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云部署SpringBoot应用">
+<meta property="og:url" content="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="All About Jarvan">
-<meta property="og:description" content="All About Jarvan">
+<meta property="og:description" content="我买了阿里云的轻量服务器，双十一的折扣不要太划算，43块钱租赁一整年。服务器系统设置成CentOS8，用来验证Spring Boot应用的部署环节。 部署的流程很简单：本地成功运行SpringBoot应用 -&gt; 打成jar包 -&gt; 配置CentOS环境 -&gt; 部署jar包到服务器，可实际上，过程中走了很多弯路，却也有趣。从下午6点一直到1点半，我十分投入，甚至晚饭也忘了。本来打算">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-12T03:41:36.000Z">
-<meta property="article:modified_time" content="2021-06-12T04:10:35.417Z">
+<meta property="og:image" content="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users/Administrator/Jarvan/source/_posts/阿里云部署SpringBoot应用/image-20211129092513210.png">
+<meta property="og:image" content="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users/Administrator/Jarvan/source/_posts/阿里云部署SpringBoot应用/image-20211129092943256.png">
+<meta property="article:published_time" content="2021-11-29T00:54:11.000Z">
+<meta property="article:modified_time" content="2021-11-29T02:18:18.151Z">
 <meta property="article:author" content="Jarvan Lee">
-<meta property="article:tag" content="AWS, Python, Java">
+<meta property="article:tag" content="aliyun">
+<meta property="article:tag" content="springboot">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="deploy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users/Administrator/Jarvan/source/_posts/阿里云部署SpringBoot应用/image-20211129092513210.png">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -41,13 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>categories | All About Jarvan
-</title>
+  <title>阿里云部署SpringBoot应用 | All About Jarvan</title>
   
 
 
@@ -185,51 +190,114 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="en">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jarvan Lee">
+      <meta itemprop="description" content="All About Jarvan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="All About Jarvan">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阿里云部署SpringBoot应用
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-<div class="post-meta">
+              <time title="Created: 2021-11-29 08:54:11 / Modified: 10:18:18" itemprop="dateCreated datePublished" datetime="2021-11-29T08:54:11+08:00">2021-11-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我买了阿里云的轻量服务器，双十一的折扣不要太划算，43块钱租赁一整年。服务器系统设置成CentOS8，用来验证Spring Boot应用的部署环节。</p>
+<p>部署的流程很简单：本地成功运行SpringBoot应用 -&gt; 打成jar包 -&gt; 配置CentOS环境 -&gt; 部署jar包到服务器，可实际上，过程中走了很多弯路，却也有趣。从下午6点一直到1点半，我十分投入，甚至晚饭也忘了。本来打算立即写下这件事的，迫于太晚了，只好推到了早上。</p>
+<ol>
+<li>本地运行SpringBoot</li>
+</ol>
+<p>这个应用克隆自<code>https://github.com/gabrieldim/Email-Sender-Spring-Boot.git</code>，实现了通过url发送邮件。需要配置发送人的邮箱信息，这里我用了QQ邮箱做测试。</p>
+<p>注意要开启邮箱的第三方服务<img src="/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users\Administrator\Jarvan\source\_posts\阿里云部署SpringBoot应用\image-20211129092513210.png" alt="image-20211129092513210"></p>
+<ol>
+<li>打成jar包</li>
+</ol>
+<p>这里我使用了IDEA的打包工具，但是IDEA给我留了陷阱。</p>
+<p><img src="/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users\Administrator\Jarvan\source\_posts\阿里云部署SpringBoot应用\image-20211129092943256.png" alt="image-20211129092943256"></p>
+<p>这里的MANIFEST.MF文件应该放在根目录下，也即删除<code>\src\main\java</code>，然后顺着流程走下来，jar包放在<code>.out\artifacts\email_sender-jar</code></p>
+<ol>
+<li>配置CentOS</li>
+</ol>
+<p>主要有两部分，安装jdk11和Tomcat。</p>
+<p>安装jdk11走了很多弯路，最开始我用wget安装，但是在Oracle官网下载的tar.gz文件总是HTML类型的，导致解压出错。即使在wget命令中添加同意协议的cookie信息，依然如此。最后我换了思路，我先下载到windows本地，然后上传到LINUX服务器。</p>
+<p>上传的操作利用了PPUTY工具。其实有很多方法的，但是之前连接AWS虚机的时候安装了PUTTY，所以直接拿来用最方便啦。PPUTY的命令是<code>pscp 本机压缩文件 Linux用户@Linux公用IP:Linux服务器目录</code>。</p>
+<p>JDK安装包上传到服务器，首先用<code>tar -zxvf jdk-11.0.13-linux-x64.tar.gz</code>解压到<code>/usr/local/java</code>，这是我放置安装包的地方。然后在<code>vim /etc/profile</code>配置环境变量，在文件末尾添加``</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## JAVA</span><br><span class="line">JAVA_HOME=``/usr/local/jdk1``.<span class="number">8.0</span>_161</span><br><span class="line">JRE_HOME=``/usr/local/jdk1``.<span class="number">8.0</span>_161``</span><br><span class="line">PATH=$PATH:$JAVA_HOME``/bin``:$JRE_HOME``/bin</span><br><span class="line">CLASSPATH=.:$JAVA_HOME``/lib/dt``.jar:$JAVA_HOME``/lib/tools``.jar:$JRE_HOME``/lib</span><br><span class="line">export` `JAVA_HOME JRE_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure>
+<p>最后要<code>source /etc/profile</code>刷新当前shell环境。<code>java -version</code>看到Java信息就算成功。</p>
+<p>安装Tomcat最艰难，下载和安装过程和jdk大同小异，只是安装目录是<code>/usr/local/tomcat/apache-tomcat-10.0.13</code>，执行bin目录下启动命令<code>./startup.sh</code>，但是tomcat的启动日志<code>tail -f ../logs/catalina.out</code>一直报错，无法找到<code>./jdk-11.0.13/bin/jre/bin/java</code>无法找到路径，cd到相应目录发现没有jre目录，原来是Oracle搞得鬼，JDK11及以后，不单独提供JRE模块，但是用户可以自行创建JRE，命令则是在jdk的bin目录下执行<code>jlink.exe --module-path jmods --add-modules java.desktop --output jre</code>。之后重启Tomcat还是有错误，把JRE配置为和JDK同一目录便解决啦。</p>
+<p>这时Tomcat已经安装好啦。我用windows的浏览器试着连接服务器的8080端口，但一直超时。这部分查了很久，直到看到有篇文章无心插柳提到了防火墙，我想起我忘了开放服务器的8080端口了Orz。</p>
+<ol>
+<li>部署应用</li>
+</ol>
+<p>第一次没有成功，解决了上文IDEA留的陷阱就可以啦。</p>
+<p>jar包目录下执行<code>java -jar email-sender.jar</code>可以看到Spring的信息。成功！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/aliyun/" rel="tag"># aliyun</a>
+              <a href="/tags/springboot/" rel="tag"># springboot</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/deploy/" rel="tag"># deploy</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/27/PTE-Score/" rel="prev" title="PTE-Score">
+      <i class="fa fa-chevron-left"></i> PTE-Score
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              1 category in total
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/certification/">certification</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-27T01:49:07.924Z</updated>
+  <updated>2021-11-29T02:18:18.151Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云部署SpringBoot应用</title>
+    <link href="http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/"/>
+    <id>http://example.com/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/</id>
+    <published>2021-11-29T00:54:11.000Z</published>
+    <updated>2021-11-29T02:18:18.151Z</updated>
+    
+    <content type="html"><![CDATA[<p>我买了阿里云的轻量服务器，双十一的折扣不要太划算，43块钱租赁一整年。服务器系统设置成CentOS8，用来验证Spring Boot应用的部署环节。</p><p>部署的流程很简单：本地成功运行SpringBoot应用 -&gt; 打成jar包 -&gt; 配置CentOS环境 -&gt; 部署jar包到服务器，可实际上，过程中走了很多弯路，却也有趣。从下午6点一直到1点半，我十分投入，甚至晚饭也忘了。本来打算立即写下这件事的，迫于太晚了，只好推到了早上。</p><ol><li>本地运行SpringBoot</li></ol><p>这个应用克隆自<code>https://github.com/gabrieldim/Email-Sender-Spring-Boot.git</code>，实现了通过url发送邮件。需要配置发送人的邮箱信息，这里我用了QQ邮箱做测试。</p><p>注意要开启邮箱的第三方服务<img src="/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users\Administrator\Jarvan\source\_posts\阿里云部署SpringBoot应用\image-20211129092513210.png" alt="image-20211129092513210"></p><ol><li>打成jar包</li></ol><p>这里我使用了IDEA的打包工具，但是IDEA给我留了陷阱。</p><p><img src="/2021/11/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2SpringBoot%E5%BA%94%E7%94%A8/Users\Administrator\Jarvan\source\_posts\阿里云部署SpringBoot应用\image-20211129092943256.png" alt="image-20211129092943256"></p><p>这里的MANIFEST.MF文件应该放在根目录下，也即删除<code>\src\main\java</code>，然后顺着流程走下来，jar包放在<code>.out\artifacts\email_sender-jar</code></p><ol><li>配置CentOS</li></ol><p>主要有两部分，安装jdk11和Tomcat。</p><p>安装jdk11走了很多弯路，最开始我用wget安装，但是在Oracle官网下载的tar.gz文件总是HTML类型的，导致解压出错。即使在wget命令中添加同意协议的cookie信息，依然如此。最后我换了思路，我先下载到windows本地，然后上传到LINUX服务器。</p><p>上传的操作利用了PPUTY工具。其实有很多方法的，但是之前连接AWS虚机的时候安装了PUTTY，所以直接拿来用最方便啦。PPUTY的命令是<code>pscp 本机压缩文件 Linux用户@Linux公用IP:Linux服务器目录</code>。</p><p>JDK安装包上传到服务器，首先用<code>tar -zxvf jdk-11.0.13-linux-x64.tar.gz</code>解压到<code>/usr/local/java</code>，这是我放置安装包的地方。然后在<code>vim /etc/profile</code>配置环境变量，在文件末尾添加``</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## JAVA</span><br><span class="line">JAVA_HOME=``/usr/local/jdk1``.<span class="number">8.0</span>_161</span><br><span class="line">JRE_HOME=``/usr/local/jdk1``.<span class="number">8.0</span>_161``</span><br><span class="line">PATH=$PATH:$JAVA_HOME``/bin``:$JRE_HOME``/bin</span><br><span class="line">CLASSPATH=.:$JAVA_HOME``/lib/dt``.jar:$JAVA_HOME``/lib/tools``.jar:$JRE_HOME``/lib</span><br><span class="line">export` `JAVA_HOME JRE_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure><p>最后要<code>source /etc/profile</code>刷新当前shell环境。<code>java -version</code>看到Java信息就算成功。</p><p>安装Tomcat最艰难，下载和安装过程和jdk大同小异，只是安装目录是<code>/usr/local/tomcat/apache-tomcat-10.0.13</code>，执行bin目录下启动命令<code>./startup.sh</code>，但是tomcat的启动日志<code>tail -f ../logs/catalina.out</code>一直报错，无法找到<code>./jdk-11.0.13/bin/jre/bin/java</code>无法找到路径，cd到相应目录发现没有jre目录，原来是Oracle搞得鬼，JDK11及以后，不单独提供JRE模块，但是用户可以自行创建JRE，命令则是在jdk的bin目录下执行<code>jlink.exe --module-path jmods --add-modules java.desktop --output jre</code>。之后重启Tomcat还是有错误，把JRE配置为和JDK同一目录便解决啦。</p><p>这时Tomcat已经安装好啦。我用windows的浏览器试着连接服务器的8080端口，但一直超时。这部分查了很久，直到看到有篇文章无心插柳提到了防火墙，我想起我忘了开放服务器的8080端口了Orz。</p><ol><li>部署应用</li></ol><p>第一次没有成功，解决了上文IDEA留的陷阱就可以啦。</p><p>jar包目录下执行<code>java -jar email-sender.jar</code>可以看到Spring的信息。成功！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我买了阿里云的轻量服务器，双十一的折扣不要太划算，43块钱租赁一整年。服务器系统设置成CentOS8，用来验证Spring Boot应用的部署环节。&lt;/p&gt;
+&lt;p&gt;部署的流程很简单：本地成功运行SpringBoot应用 -&amp;gt; 打成jar包 -&amp;gt; 配置CentOS</summary>
+      
+    
+    
+    
+    
+    <category term="aliyun" scheme="http://example.com/tags/aliyun/"/>
+    
+    <category term="springboot" scheme="http://example.com/tags/springboot/"/>
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="deploy" scheme="http://example.com/tags/deploy/"/>
+    
+  </entry>
   
   <entry>
     <title>PTE-Score</title>

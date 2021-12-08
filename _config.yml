@@ -104,7 +104,7 @@ theme: next
 deploy:
   type: 'git'
   repo: git@github.com:Jarvan12th/HexoEn.git
-  branch: main
+  branch: master
 
 #Search
 search:

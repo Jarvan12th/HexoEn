@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Beginning</title>
-    <url>/2022/01/01/Beginning/</url>
-    <content><![CDATA[<p>I am a software developer with great interest in IT industry.</p>
-<p>I’ve benefited a lot when interacting with brilliants in this field,  also when visiting their excellent blog sites.</p>
-<p>So I aspire to join them.</p>
-<p>I’ll write down topics I dived in.</p>
-<p>Hope I could become an interested SDE, or an industry observer, or as least a storyteller.</p>
-]]></content>
-      <tags>
-        <tag>me</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode-daily-practice-20220101</title>
     <url>/2022/01/01/Leetcode-daily-practice-20220101/</url>
     <content><![CDATA[<h5 id="Hard-312-Burst-Balloons"><a href="#Hard-312-Burst-Balloons" class="headerlink" title="(Hard)312. Burst Balloons"></a>(Hard)<a href="https://leetcode.com/problems/burst-balloons/">312. Burst Balloons</a></h5><p>Happy New Year! 2022! Let’s begin with a hard problem. It’s a dynamic programming problem, with two dimensions.</p>
@@ -27,6 +14,19 @@
 ]]></content>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Writing-at-the-Beginning</title>
+    <url>/2022/01/01/Writing-at-the-Beginning/</url>
+    <content><![CDATA[<p>I am a software developer with great interest in IT industry.</p>
+<p>I’ve benefited a lot when interacting with brilliants in this field,  also when visiting their excellent blog sites.</p>
+<p>So I aspire to join them.</p>
+<p>I’ll write down topics I dive in.</p>
+<p>Hope I could become an interested SDE, or an industry observer, or as least a storyteller.</p>
+]]></content>
+      <tags>
+        <tag>me</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-03T06:47:00.232Z</updated>
+  <updated>2022-01-04T03:15:00.856Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode-daily-practice-20220104</title>
+    <link href="http://example.com/2022/01/04/Leetcode-daily-practice-20220104/"/>
+    <id>http://example.com/2022/01/04/Leetcode-daily-practice-20220104/</id>
+    <published>2022-01-04T02:48:20.000Z</published>
+    <updated>2022-01-04T03:15:00.856Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Easy-1009-Complement-of-Base-10-Integer"><a href="#Easy-1009-Complement-of-Base-10-Integer" class="headerlink" title="(Easy)1009. Complement of Base 10 Integer"></a>(Easy)<a href="https://leetcode.com/problems/complement-of-base-10-integer/">1009. Complement of Base 10 Integer</a></h5><p>One method is flipping all the digitals and accumulating them. </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bitwiseComplement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> answer = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">// if the ith lastest digital in n is 0, then the ith digital in &quot;1 &lt;&lt; i&quot; is 1.</span></span><br><span class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>) == <span class="number">0</span>) answer += <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">                </span><br><span class="line">            n = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            i ++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Time Complexity: O(log~2~n); Space Complexity: O(1)</p><p>Another method is by considering XOR. We need a mask in format ‘1111…’, the number of mask’s bit digitals equals to n’s. Then <code>mask XOR n</code> conducts the answer.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bitwiseComplement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mask = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(mask &lt; n) mask = (mask &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> mask ^ n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Time Complexity: O(log~2~n); Space Complexity: O(1)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;Easy-1009-Complement-of-Base-10-Integer&quot;&gt;&lt;a href=&quot;#Easy-1009-Complement-of-Base-10-Integer&quot; class=&quot;headerlink&quot; title=&quot;(Easy)1009. Co</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode-daily-practice-20220103</title>

@@ -17,16 +17,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Writing-at-the-Beginning</title>
-    <url>/2022/01/01/Writing-at-the-Beginning/</url>
-    <content><![CDATA[<p>I am a software developer with great interest in IT industry.</p>
-<p>I’ve benefited a lot when interacting with brilliants in this field,  also when visiting their excellent blog sites.</p>
-<p>So I aspire to join them.</p>
-<p>I’ll write down topics I dive in.</p>
-<p>Hope I could become an interested SDE, or an industry observer, or as least a storyteller.</p>
+    <title>Leetcode-daily-practice-20220102</title>
+    <url>/2022/01/02/Leetcode-daily-practice-20220102/</url>
+    <content><![CDATA[<h5 id="Medium-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60"><a href="#Medium-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60" class="headerlink" title="(Medium)1010. Pairs of Songs With Total Durations Divisible by 60"></a>(Medium)<a href="https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/">1010. Pairs of Songs With Total Durations Divisible by 60</a></h5><p>Obviously, <code>As a vaild pair (a, b), (a + b) % 60 == a % 60 + b % 60</code>. So construct a remainder array to store the frequency of remainders in <code>[0, 59]</code>.</p>
+<p>The counting ways for <code>remainder 30, remainder 60</code> and <code>other remainders</code> are different.</p>
+<ul>
+<li>For <code>Rem 30</code>, it could make pairs with every <code>Rem 30</code> stored before it. <code>Rem 60</code> is as same as this.</li>
+<li>For other <code>Rem i</code>, it should count every <code>Rem 60-i</code> currently stored.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numPairsDivisibleBy60</span><span class="params">(<span class="keyword">int</span>[] time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] mod = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">60</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> answer = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x : time)&#123;</span><br><span class="line">            <span class="keyword">int</span> m = x % <span class="number">60</span>;</span><br><span class="line">            mod[m] ++;</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">if</span>(m == <span class="number">0</span> || m == <span class="number">30</span>) &#123;</span><br><span class="line">                answer += mod[m] - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            answer += mod[<span class="number">60</span>-m];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time Complexity: O(n); Space Complexity: O(60)</p>
 ]]></content>
       <tags>
-        <tag>me</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -41,19 +44,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode-daily-practice-20220102</title>
-    <url>/2022/01/02/Leetcode-daily-practice-20220102/</url>
-    <content><![CDATA[<h5 id="Medium-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60"><a href="#Medium-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60" class="headerlink" title="(Medium)1010. Pairs of Songs With Total Durations Divisible by 60"></a>(Medium)<a href="https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/">1010. Pairs of Songs With Total Durations Divisible by 60</a></h5><p>Obviously, <code>As a vaild pair (a, b), (a + b) % 60 == a % 60 + b % 60</code>. So construct a remainder array to store the frequency of remainders in <code>[0, 59]</code>.</p>
-<p>The counting ways for <code>remainder 30, remainder 60</code> and <code>other remainders</code> are different.</p>
-<ul>
-<li>For <code>Rem 30</code>, it could make pairs with every <code>Rem 30</code> stored before it. <code>Rem 60</code> is as same as this.</li>
-<li>For other <code>Rem i</code>, it should count every <code>Rem 60-i</code> currently stored.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numPairsDivisibleBy60</span><span class="params">(<span class="keyword">int</span>[] time)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] mod = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">60</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> answer = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x : time)&#123;</span><br><span class="line">            <span class="keyword">int</span> m = x % <span class="number">60</span>;</span><br><span class="line">            mod[m] ++;</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">if</span>(m == <span class="number">0</span> || m == <span class="number">30</span>) &#123;</span><br><span class="line">                answer += mod[m] - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            answer += mod[<span class="number">60</span>-m];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Time Complexity: O(n); Space Complexity: O(60)</p>
+    <title>Leetcode-daily-practice-20220104</title>
+    <url>/2022/01/04/Leetcode-daily-practice-20220104/</url>
+    <content><![CDATA[<h5 id="Easy-1009-Complement-of-Base-10-Integer"><a href="#Easy-1009-Complement-of-Base-10-Integer" class="headerlink" title="(Easy)1009. Complement of Base 10 Integer"></a>(Easy)<a href="https://leetcode.com/problems/complement-of-base-10-integer/">1009. Complement of Base 10 Integer</a></h5><p>One method is flipping all the digitals and accumulating them. </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bitwiseComplement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> answer = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">// if the ith lastest digital in n is 0, then the ith digital in &quot;1 &lt;&lt; i&quot; is 1.</span></span><br><span class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>) == <span class="number">0</span>) answer += <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">                </span><br><span class="line">            n = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            i ++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time Complexity: O(log~2~n); Space Complexity: O(1)</p>
+<p>Another method is by considering XOR. We need a mask in format ‘1111…’, the number of mask’s bit digitals equals to n’s. Then <code>mask XOR n</code> conducts the answer.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bitwiseComplement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mask = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(mask &lt; n) mask = (mask &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> mask ^ n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time Complexity: O(log~2~n); Space Complexity: O(1)</p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Writing-at-the-Beginning</title>
+    <url>/2022/01/01/Writing-at-the-Beginning/</url>
+    <content><![CDATA[<p>I am a software developer with great interest in IT industry.</p>
+<p>I’ve benefited a lot when interacting with brilliants in this field,  also when visiting their excellent blog sites.</p>
+<p>So I aspire to join them.</p>
+<p>I’ll write down topics I dive in.</p>
+<p>Hope I could become an interested SDE, or an industry observer, or as least a storyteller.</p>
+]]></content>
+      <tags>
+        <tag>me</tag>
       </tags>
   </entry>
 </search>

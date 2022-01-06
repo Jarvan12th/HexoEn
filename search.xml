@@ -69,6 +69,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode-daily-practice-20220106</title>
+    <url>/HexoEn/2022/01/06/Leetcode-daily-practice-20220106/</url>
+    <content><![CDATA[<h5 id="Medium-1094-Car-Pooling"><a href="#Medium-1094-Car-Pooling" class="headerlink" title="(Medium)1094. Car Pooling"></a>(Medium)<a href="https://leetcode.com/problems/car-pooling/">1094. Car Pooling</a></h5><p>Use a <code>passengersAtLocation</code> array with size 1001 to store the counts of passengers staying in the car at each location. Inverse <code>trips</code> array, increase the number of passengers that want to get on, meanwhile decrease the number of passengers that want to depart. At each location, the counts should not greater than the car’s capacity.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">carPooling</span><span class="params">(<span class="keyword">int</span>[][] trips, <span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] passengersAtLocation = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1001</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>[] trip : trips)&#123;</span><br><span class="line">            passengersAtLocation[trip[<span class="number">1</span>]] += trip[<span class="number">0</span>];</span><br><span class="line">            passengersAtLocation[trip[<span class="number">2</span>]] -= trip[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x : passengersAtLocation)&#123;</span><br><span class="line">            passengersOnBoard += x;</span><br><span class="line">            <span class="keyword">if</span>(passengersOnBoard &gt; capacity) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Time Complexity: O(n); Space Complexity: O(n)</p>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Writing-at-the-Beginning</title>
     <url>/HexoEn/2022/01/01/Writing-at-the-Beginning/</url>
     <content><![CDATA[<p>I am a software developer with great interest in IT industry.</p>

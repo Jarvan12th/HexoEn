@@ -6,7 +6,7 @@
   <link href="https://jarvan12th.github.io/HexoEn/atom.xml" rel="self"/>
   
   <link href="https://jarvan12th.github.io/HexoEn/"/>
-  <updated>2022-01-06T05:32:07.265Z</updated>
+  <updated>2022-01-07T08:30:23.437Z</updated>
   <id>https://jarvan12th.github.io/HexoEn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode-daily-practice-20220107</title>
+    <link href="https://jarvan12th.github.io/HexoEn/2022/01/07/Leetcode-daily-practice-20220107/"/>
+    <id>https://jarvan12th.github.io/HexoEn/2022/01/07/Leetcode-daily-practice-20220107/</id>
+    <published>2022-01-07T08:06:51.000Z</published>
+    <updated>2022-01-07T08:30:23.437Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Medium-382-Linked-List-Random-Node"><a href="#Medium-382-Linked-List-Random-Node" class="headerlink" title="(Medium)382. Linked List Random Node"></a>(Medium)<a href="https://leetcode.com/problems/linked-list-random-node/">382. Linked List Random Node</a></h5><p>Here is a solution without getting the length of the linked list or using any extra space. The tricky part is <code>the same probability of being chosen</code>.</p><p>Assume that there are n nodes in total.</p><p>The last node gets probability <code>1/n</code> in <code>n nodes</code>. That is fine. The previous <code>n-1 nodes</code> get probability <code>(n-1)/n</code> in <code>n nodes</code></p><p>The second last node gets probability <code>1/(n-1)</code> in <code>n-1 node</code>. So its probability in <code>n nodes</code> is <code>1/(n-1) * (n-1)/n = 1/n</code>. It’s fine. The previous <code>n-2 nodes</code> get probability <code>(n-2)/(n-1)</code> in <code>n-1 nodes</code></p><p>The third last node gets probability <code>1/(n-2)</code> in <code>n-2 node</code>. So its probability in <code>n nodes</code> is <code>1/(n-2) * (n-2)/(n-1) * (n-1)/n = 1/n</code>. It’s fine. The previous <code>n-3 nodes</code> get probability <code>(n-3)/(n-2)</code> in <code>n-2 nodes</code></p><p>…</p><p>So the probability of each node is <code>1/n</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    ListNode head;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Solution</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.head = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> answer = <span class="number">0</span>, index = <span class="number">1</span>;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Math.random() &lt; <span class="number">1.0</span>/index)&#123;</span><br><span class="line">                answer = cur.val;</span><br><span class="line">            &#125;</span><br><span class="line">            index ++;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Time Complexity: O(n); Space Complexity: O(1)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;Medium-382-Linked-List-Random-Node&quot;&gt;&lt;a href=&quot;#Medium-382-Linked-List-Random-Node&quot; class=&quot;headerlink&quot; title=&quot;(Medium)382. Linked List</summary>
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://jarvan12th.github.io/HexoEn/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode-daily-practice-20220106</title>
